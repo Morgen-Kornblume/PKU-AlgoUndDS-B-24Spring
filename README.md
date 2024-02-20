@@ -4,3 +4,5 @@
 目前已经初始化了 Docker 开发容器，包含标准的 Anaconda Python 3 环境。
 
 强烈建议开发者使用 Docker 容器进行开发，以保证开发环境的一致性和简易性。
+
+具体如何使用基于 WSL2 的 Docker 开发环境，请参见 Mircosoft 官方文档。
