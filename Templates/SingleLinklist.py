@@ -114,3 +114,30 @@ class SingleLinklist:
         返回链表的长度(int)
         '''
         return self.size
+    
+    def clear(self):
+        '''
+        清空链表
+        '''
+        self.head = None
+        self.tail = None
+        self.size = 0
+
+    def is_empty(self) -> bool:
+        '''
+        判断链表是否为空
+        '''
+        return self.size == 0
+
+    # 实现 __iter__ 和 __next__ 方法，使得链表对象可以被迭代
+    def __iter__(self):
+        self._iter = self.head
+        return self
+
+    def __next__(self):
+        if self._iter is None:
+            raise StopIteration
+        else:
+            data = self._iter.data
+            self._iter = self._iter.next
+            return data
