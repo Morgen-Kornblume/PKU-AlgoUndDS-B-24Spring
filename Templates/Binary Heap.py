@@ -23,10 +23,19 @@ class BinaryHeap:
         self.dat.append(data)
         self.upload(self.size)
 
-    def download():
+    def download(self):
         '''
         删除堆顶后向下调整
         '''
+        nowa = 1
+        while(nowa * 2 <= self.size):
+            tmp = nowa * 2
+            if(tmp + 1 <= self.size and self.dat[tmp + 1] > self.dat[tmp]):
+                t += 1
+            if(self.dat[tmp] < self.dat[nowa]):
+                break
+            self.dat[tmp], self.dat[nowa] = self.dat[nowa], self.dat[tmp]
+            nowa = tmp
 
     def pop(self):
         '''
@@ -36,4 +45,6 @@ class BinaryHeap:
             self.dat[1], self.dat[self.size] = self.dat[self.size], self.dat[1]
             self.dat.pop()
             self.size -= 1
-            download()
+            self.download()
+
+
