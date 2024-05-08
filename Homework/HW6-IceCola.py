@@ -15,11 +15,7 @@ class DisjointUnionSet:
         x, y = self.find(x), self.find(y)
         if x == y:
             return False
-        if self.rank[x] < self.rank[y]:
-            x, y = y, x
         self.parent[y] = x
-        if self.rank[x] == self.rank[y]:
-            self.rank[x] += 1
         return True
 
     def same(self, x, y):
